@@ -19,7 +19,7 @@ public class Saal {
     @Column(name = "seats")
     private int seats;
 
-    @OneToMany(mappedBy = "saal", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "saalId", cascade = CascadeType.ALL)
     private List<Ticket> tickets = new ArrayList<>();
 
     public Saal() {
