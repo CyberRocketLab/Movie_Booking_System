@@ -2,7 +2,7 @@ CREATE TABLE movie (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL DEFAULT 'ACTION',
-    duration TIME NOT NULL,
+    duration VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 

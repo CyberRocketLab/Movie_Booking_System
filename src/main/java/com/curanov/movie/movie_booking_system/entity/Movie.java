@@ -22,15 +22,15 @@ public class Movie {
     private Genre genre;
 
     @Column(name = "duration")
-    private Duration duration;
+    private String duration;
 
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "movieId", cascade = CascadeType.ALL)
     private List<Ticket> ticketsList = new ArrayList<>();
 
     public Movie() {
     }
 
-    public Movie(String title, Genre genre, Duration duration) {
+    public Movie(String title, Genre genre, String duration) {
         this.title = title;
         this.genre = genre;
         this.duration = duration;
@@ -60,11 +60,11 @@ public class Movie {
         this.genre = genre;
     }
 
-    public Duration getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
@@ -74,5 +74,14 @@ public class Movie {
 
     public void setTicketsList(List<Ticket> ticketsList) {
         this.ticketsList = ticketsList;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", genre=" + genre +
+                ", duration='" + duration + '\'';
     }
 }
