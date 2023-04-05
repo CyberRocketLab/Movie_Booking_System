@@ -25,8 +25,6 @@ public class User {
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
     private List<Ticket> tickets = new ArrayList<>();
 
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
-    private List<Booking> bookings = new ArrayList<>();
 
     public User() {
     }
@@ -77,11 +75,4 @@ public class User {
         this.tickets = tickets;
     }
 
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
 }
